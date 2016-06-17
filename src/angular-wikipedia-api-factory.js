@@ -5,9 +5,9 @@ angular.module("jtt_wikipedia", [])
 
         var wikipediaFactory = {};
 
-        wikipediaFactory.searchArticles = function (_params) {
+        wikipediaFactory.searchArticlesByTitle = function (_params) {
 
-            var wikipediaSearchData = wikipediaSearchDataService.getNew("searchArticles", _params);
+            var wikipediaSearchData = wikipediaSearchDataService.getNew("searchArticlesByTitle", _params);
 
             return $http.jsonp(
                 wikipediaSearchData.url,
@@ -21,8 +21,8 @@ angular.module("jtt_wikipedia", [])
         return wikipediaFactory;
     }])
     .service('wikipediaSearchDataService', function () {
-        this.getApiBaseUrl = function (_params) {
-            return ".wikipedia.org/w/api.php";
+        this.getApiBaseUrl = function (_lang) {
+            return 'https://' + _lang + ".wikipedia.org/w/api.php";
         };
 
         this.fillDataInObjectByList = function (_object, _params, _list) {
@@ -53,13 +53,9 @@ angular.module("jtt_wikipedia", [])
                 _params.lang = 'en'
             }
 
-            if (angular.isDefined(_params.srlimit)) {
-                wikipediaSearchData.object.srlimit = _params.srlimit;
-            }
-
             switch (_type) {
 
-                case "searchArticles":
+                case "searchArticlesByTitle":
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = 'intitle:' + _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
@@ -67,9 +63,9 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro'
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
                     ]);
-                    wikipediaSearchData.url = 'https://' + _params.lang + this.getApiBaseUrl();
+                    wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
             }
             return wikipediaSearchData;

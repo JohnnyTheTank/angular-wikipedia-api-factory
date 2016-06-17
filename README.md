@@ -36,19 +36,18 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 #### searchArticles
 
 ```js
-wikipediaFactory.searchArticles({
+wikipediaFactory.searchArticlesByTitle({
     term: "<TERM>", // Searchterm
-    srlimit: "<SR_LIMIT>", // (optional) max result. valid values: 1-50 | default: 10
+    lang: "<LANGUAGE>"; // (optional) default: 'en'
     pilimit: "<PI_LIMIT>", // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: "<EX_LIMIT>", // (optional) 'max': extracts for all articles, otherwise only for the first
-    exintro: "<EX_INTRO>", // (optional) 'max': extracts for all articles, otherwise only for the first
+    exintro: "<EX_INTRO>", // (optional) '1': if we just want the intro, otherwise it shows all sections
 }).then(function (_data) {
     //on success
 }).catch(function (_data) {
     //on error
 });
 ```
-
 
 ## Wikipedia JSONP API
 
