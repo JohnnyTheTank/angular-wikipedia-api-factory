@@ -5,9 +5,6 @@
  
 Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
-
-:warning: Work in progress
-
 ## Usage
 
 1. Install via either [bower](http://bower.io/), [npm](https://www.npmjs.com/) or downloaded files:
@@ -48,6 +45,8 @@ wikipediaFactory.searchArticlesByTitle({
     //on error
 });
 ```
+
+:warning: more methods will come soon
 
 ## Wikipedia JSONP API
 
