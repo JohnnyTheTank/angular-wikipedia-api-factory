@@ -18,6 +18,19 @@ angular.module("jtt_wikipedia", [])
             );
         };
 
+        wikipediaFactory.searchArticles = function (_params) {
+
+            var wikipediaSearchData = wikipediaSearchDataService.getNew("searchArticles", _params);
+
+            return $http.jsonp(
+                wikipediaSearchData.url,
+                {
+                    method: 'GET',
+                    params: wikipediaSearchData.object,
+                }
+            );
+        };
+
         return wikipediaFactory;
     }])
     .service('wikipediaSearchDataService', function () {
@@ -58,6 +71,19 @@ angular.module("jtt_wikipedia", [])
                 case "searchArticlesByTitle":
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = 'intitle:' + _params.term;
+                    wikipediaSearchData.object.pilimit = 'max';
+                    wikipediaSearchData.object.exlimit = 'max';
+                    wikipediaSearchData.object.exintro = '';
+
+                    wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
+                    ]);
+                    wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
+                    break;
+
+                case "searchArticles":
+                    wikipediaSearchData.object.generator = 'search';
+                    wikipediaSearchData.object.gsrsearch = _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
                     wikipediaSearchData.object.exlimit = 'max';
                     wikipediaSearchData.object.exintro = '';

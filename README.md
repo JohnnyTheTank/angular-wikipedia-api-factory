@@ -33,6 +33,21 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 #### searchArticles
 
 ```js
+wikipediaFactory.searchArticles({
+    term: "<TERM>", // Searchterm
+    lang: "<LANGUAGE>"; // (optional) default: 'en'
+    pilimit: "<PI_LIMIT>", // (optional) 'max': images for all articles, otherwise only for the first
+    exlimit: "<EX_LIMIT>", // (optional) 'max': extracts for all articles, otherwise only for the first
+    exintro: "<EX_INTRO>", // (optional) '1': if we just want the intro, otherwise it shows all sections
+}).then(function (_data) {
+    //on success
+}).catch(function (_data) {
+    //on error
+});
+```
+
+
+```js
 wikipediaFactory.searchArticlesByTitle({
     term: "<TERM>", // Searchterm
     lang: "<LANGUAGE>"; // (optional) default: 'en'

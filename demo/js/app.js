@@ -8,4 +8,11 @@ app.controller('controller', ['$scope', 'wikipediaFactory', function($scope, wik
         console.info("search articles by title", _data);
     });
 
+    wikipediaFactory.searchArticles({
+        term:"Fußball",
+        lang:'de',
+    }).then(function(_data){
+        console.info("search articles", _data);
+    });
+
 }]);
