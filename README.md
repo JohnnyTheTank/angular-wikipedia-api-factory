@@ -46,6 +46,17 @@ wikipediaFactory.searchArticles({
 });
 ```
 
+#### getArticle
+```js
+wikipediaFactory.getArticle({
+    term: "<TERM>",
+}).then(function (_data) {
+    //on success
+}).catch(function (_data) {
+    //on error
+});
+```
+
 
 ## Wikipedia JSONP API
 
