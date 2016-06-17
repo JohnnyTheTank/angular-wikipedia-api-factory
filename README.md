@@ -2,8 +2,11 @@
 
 [![npm version](https://badge.fury.io/js/angular-wikipedia-api-factory.png)](https://badge.fury.io/js/angular-wikipedia-api-factory)
 [![Bower version](https://badge.fury.io/bo/angular-wikipedia-api-factory.png)](https://badge.fury.io/bo/angular-wikipedia-api-factory)
-
+ 
 Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
+
+
+:warning: Work in progress
 
 ## Usage
 
@@ -39,17 +42,6 @@ wikipediaFactory.searchArticles({
     pilimit: "<PI_LIMIT>", // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: "<EX_LIMIT>", // (optional) 'max': extracts for all articles, otherwise only for the first
     exintro: "<EX_INTRO>", // (optional) 'max': extracts for all articles, otherwise only for the first
-}).then(function (_data) {
-    //on success
-}).catch(function (_data) {
-    //on error
-});
-```
-
-#### getArticle
-```js
-wikipediaFactory.getArticle({
-    term: "<TERM>",
 }).then(function (_data) {
     //on success
 }).catch(function (_data) {
