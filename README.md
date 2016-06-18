@@ -63,6 +63,20 @@ wikipediaFactory.searchArticlesByTitle({
 });
 ```
 
+#### getArticle
+
+```js
+wikipediaFactory.getArticle({
+    term: '<TERM>', // Searchterm
+    lang: '<LANGUAGE>', // (optional) default: 'en'
+    pithumbsize: '<PAGE_IMAGE_THUMBNAIL_SIZE>', // (optional) default: '400'
+}).then(function (_data) {
+    //on success
+}).catch(function (_data) {
+    //on error
+});
+```
+
 :warning: more methods will come soon
 
 ## Wikipedia JSONP API

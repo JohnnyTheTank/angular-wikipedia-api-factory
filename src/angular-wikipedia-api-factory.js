@@ -31,6 +31,19 @@ angular.module("jtt_wikipedia", [])
             );
         };
 
+        wikipediaFactory.getArticle = function (_params) {
+
+            var wikipediaSearchData = wikipediaSearchDataService.getNew("getArticle", _params);
+
+            return $http.jsonp(
+                wikipediaSearchData.url,
+                {
+                    method: 'GET',
+                    params: wikipediaSearchData.object,
+                }
+            );
+        };
+
         return wikipediaFactory;
     }])
     .service('wikipediaSearchDataService', function () {
@@ -55,7 +68,6 @@ angular.module("jtt_wikipedia", [])
                 object: {
                     callback: "JSON_CALLBACK",
                     action: 'query',
-                    prop: 'extracts|pageimages',
                     format: 'json',
                     formatversion: 2,
                 },
@@ -71,8 +83,8 @@ angular.module("jtt_wikipedia", [])
             }
 
             switch (_type) {
-
                 case "searchArticlesByTitle":
+                    wikipediaSearchData.object.prop = 'extracts|pageimages';
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = 'intitle:' + _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
@@ -80,12 +92,13 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
+                        'prop', 'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
 
                 case "searchArticles":
+                    wikipediaSearchData.object.prop = 'extracts|pageimages';
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
@@ -93,7 +106,17 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
+                        'prop', 'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
+                    ]);
+                    wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
+                    break;
+
+                case "getArticle":
+                    wikipediaSearchData.object.prop = 'extracts|pageimages|images';
+                    wikipediaSearchData.object.titles = _params.term;
+
+                    wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
+                        'prop', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
