@@ -1,6 +1,6 @@
 /**
     @name: angular-wikipedia-api-factory 
-    @version: 0.1.0 (18-06-2016) 
+    @version: 0.1.1 (18-06-2016) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/angular-wikipedia-api-factory#readme 
     @license: MIT
