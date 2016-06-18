@@ -77,8 +77,6 @@ wikipediaFactory.getArticle({
 });
 ```
 
-:warning: more methods will come soon
-
 ## Wikipedia JSONP API
 
 * Documentation: https://www.mediawiki.org/wiki/API:Main_page/en
