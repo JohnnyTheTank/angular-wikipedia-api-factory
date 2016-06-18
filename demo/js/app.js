@@ -3,12 +3,14 @@ app.controller('controller', ['$scope', 'wikipediaFactory', function($scope, wik
 
     wikipediaFactory.searchArticlesByTitle({
         term:"Jonathan",
+        gsrlimit: 3
     }).then(function(_data){
         console.info("search articles by title", _data);
     });
 
     wikipediaFactory.searchArticles({
         term:"soccer",
+        gsrlimit: 20
     }).then(function(_data){
         console.info("search articles", _data);
     });

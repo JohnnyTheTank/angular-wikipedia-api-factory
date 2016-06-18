@@ -1,6 +1,6 @@
 {
   "name": "angular-wikipedia-api-factory",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "angularjs factory for wikipedia jsonp rest api requests",
   "main": "dist/angular-wikipedia-api-factory.min.js",
   "scripts": {

@@ -36,6 +36,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 wikipediaFactory.searchArticles({
     term: '<TERM>', // Searchterm
     lang: '<LANGUAGE>', // (optional) default: 'en'
+    gsrlimit: '<GS_LIMIT>', // (optional) default: 10. valid values: 0-500
     pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
     pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
@@ -52,6 +53,7 @@ wikipediaFactory.searchArticles({
 wikipediaFactory.searchArticlesByTitle({
     term: '<TERM>', // Searchterm
     lang: '<LANGUAGE>', // (optional) default: 'en'
+    gsrlimit: '<GS_LIMIT>', // (optional) default: 10. valid values: 0-500
     pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
     pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
