@@ -66,6 +66,10 @@ angular.module("jtt_wikipedia", [])
                 _params.lang = 'en'
             }
 
+            if (angular.isUndefined(_params.pithumbsize)) {
+                _params.pithumbsize = '400'
+            }
+
             switch (_type) {
 
                 case "searchArticlesByTitle":
@@ -76,7 +80,7 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
@@ -89,7 +93,7 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;

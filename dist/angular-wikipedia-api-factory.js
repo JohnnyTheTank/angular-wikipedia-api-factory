@@ -1,6 +1,6 @@
 /**
     @name: angular-wikipedia-api-factory 
-    @version: 0.1.0 (17-06-2016) 
+    @version: 0.1.0 (18-06-2016) 
     @author: Jonathan Hornung 
     @url: https://github.com/JohnnyTheTank/angular-wikipedia-api-factory#readme 
     @license: MIT
@@ -73,6 +73,10 @@ angular.module("jtt_wikipedia", [])
                 _params.lang = 'en'
             }
 
+            if (angular.isUndefined(_params.pithumbsize)) {
+                _params.pithumbsize = '400'
+            }
+
             switch (_type) {
 
                 case "searchArticlesByTitle":
@@ -83,7 +87,7 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
@@ -96,7 +100,7 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.exintro = '';
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop'
+                        'generator', 'gsrsearch', 'pilimit', 'exlimit', 'exintro', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;

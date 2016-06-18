@@ -15,15 +15,15 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 3. Include dependencies in your HTML.
     1. When using bower:
     ```html
-    <script src="bower_components/angular-wikipedia-api-factory/src/angular-wikipedia-api-factory.min.js"></script>
+    <script src='bower_components/angular-wikipedia-api-factory/src/angular-wikipedia-api-factory.min.js'></script>
     ```
     2. When using npm:
     ```html
-    <script src="node_modules/angular-wikipedia-api-factory/src/angular-wikipedia-api-factory.min.js"></script>
+    <script src='node_modules/angular-wikipedia-api-factory/src/angular-wikipedia-api-factory.min.js'></script>
     ```
     3. when using downloaded files
     ```html
-    <script src="angular-wikipedia-api-factory.min.js"></script>
+    <script src='angular-wikipedia-api-factory.min.js'></script>
     ```
 4. Use the factory `wikipediaFactory`
 
@@ -34,11 +34,12 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 
 ```js
 wikipediaFactory.searchArticles({
-    term: "<TERM>", // Searchterm
-    lang: "<LANGUAGE>"; // (optional) default: 'en'
-    pilimit: "<PI_LIMIT>", // (optional) 'max': images for all articles, otherwise only for the first
-    exlimit: "<EX_LIMIT>", // (optional) 'max': extracts for all articles, otherwise only for the first
-    exintro: "<EX_INTRO>", // (optional) '1': if we just want the intro, otherwise it shows all sections
+    term: '<TERM>', // Searchterm
+    lang: '<LANGUAGE>', // (optional) default: 'en'
+    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
+    pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
+    exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
+    exintro: '<EX_INTRO>', // (optional) '1': if we just want the intro, otherwise it shows all sections
 }).then(function (_data) {
     //on success
 }).catch(function (_data) {
@@ -49,11 +50,12 @@ wikipediaFactory.searchArticles({
 
 ```js
 wikipediaFactory.searchArticlesByTitle({
-    term: "<TERM>", // Searchterm
-    lang: "<LANGUAGE>"; // (optional) default: 'en'
-    pilimit: "<PI_LIMIT>", // (optional) 'max': images for all articles, otherwise only for the first
-    exlimit: "<EX_LIMIT>", // (optional) 'max': extracts for all articles, otherwise only for the first
-    exintro: "<EX_INTRO>", // (optional) '1': if we just want the intro, otherwise it shows all sections
+    term: '<TERM>', // Searchterm
+    lang: '<LANGUAGE>', // (optional) default: 'en'
+    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
+    pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
+    exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
+    exintro: '<EX_INTRO>', // (optional) '1': if we just want the intro, otherwise it shows all sections
 }).then(function (_data) {
     //on success
 }).catch(function (_data) {
