@@ -37,7 +37,7 @@ wikipediaFactory.searchArticles({
     term: '<TERM>', // Searchterm
     lang: '<LANGUAGE>', // (optional) default: 'en'
     gsrlimit: '<GS_LIMIT>', // (optional) default: 10. valid values: 0-500
-    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
+    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: 400
     pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
     exintro: '<EX_INTRO>', // (optional) '1': if we just want the intro, otherwise it shows all sections
@@ -54,7 +54,7 @@ wikipediaFactory.searchArticlesByTitle({
     term: '<TERM>', // Searchterm
     lang: '<LANGUAGE>', // (optional) default: 'en'
     gsrlimit: '<GS_LIMIT>', // (optional) default: 10. valid values: 0-500
-    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: '400'
+    pithumbsize: '<PAGE_IMAGES_THUMBNAIL_SIZE>', // (optional) default: 400
     pilimit: '<PAGE_IMAGES_LIMIT>', // (optional) 'max': images for all articles, otherwise only for the first
     exlimit: '<EX_LIMIT>', // (optional) 'max': extracts for all articles, otherwise only for the first
     exintro: '<EX_INTRO>', // (optional) '1': if we just want the intro, otherwise it shows all sections
