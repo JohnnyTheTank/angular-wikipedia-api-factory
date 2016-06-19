@@ -84,7 +84,7 @@ angular.module("jtt_wikipedia", [])
 
             switch (_type) {
                 case "searchArticlesByTitle":
-                    wikipediaSearchData.object.prop = 'extracts|pageimages';
+                    wikipediaSearchData.object.prop = 'extracts|pageimages|info';
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = 'intitle:' + _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
@@ -98,7 +98,7 @@ angular.module("jtt_wikipedia", [])
                     break;
 
                 case "searchArticles":
-                    wikipediaSearchData.object.prop = 'extracts|pageimages';
+                    wikipediaSearchData.object.prop = 'extracts|pageimages|info';
                     wikipediaSearchData.object.generator = 'search';
                     wikipediaSearchData.object.gsrsearch = _params.term;
                     wikipediaSearchData.object.pilimit = 'max';
@@ -112,7 +112,7 @@ angular.module("jtt_wikipedia", [])
                     break;
 
                 case "getArticle":
-                    wikipediaSearchData.object.prop = 'extracts|pageimages|images';
+                    wikipediaSearchData.object.prop = 'extracts|pageimages|images|info';
                     wikipediaSearchData.object.titles = _params.term;
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
