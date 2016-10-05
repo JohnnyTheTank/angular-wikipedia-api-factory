@@ -24,7 +24,8 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     ```html
     <script src="angular-wikipedia-api-factory.min.js"></script>
     ```
-3. Add **`jtt_wikipedia`** to your application's module dependencies:    
+3. Add **`jtt_wikipedia`** to your application's module dependencies
+  
     ```JavaScript
     angular.module('app', ['wikipedia']);
     ```
