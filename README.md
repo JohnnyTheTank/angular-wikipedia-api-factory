@@ -29,7 +29,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     ```JavaScript
     angular.module('app', ['jtt_wikipedia']);
     ```
-4. Use the factory `wikipediaFactory`:
+4. Use the factory `wikipediaFactory`
 
     ```JavaScript
     angular.module('app');
