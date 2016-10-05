@@ -32,7 +32,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 4. Use the factory `wikipediaFactory`
 
     ```JavaScript
-    angular.module('app');
+    angular.module('app')
         .controller('appController', function($scope, wikipediaFactory){
         
             wikipediaFactory.getArticle({
