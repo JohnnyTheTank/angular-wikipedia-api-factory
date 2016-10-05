@@ -29,6 +29,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     angular.module('app', ['wikipedia']);
     ```
 4. Use the factory `wikipediaFactory`:
+
     ```JavaScript
     angular.module('app');
         .controller('appController', function($scope, wikipediaFactory){
