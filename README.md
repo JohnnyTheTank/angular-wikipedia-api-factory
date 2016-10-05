@@ -34,11 +34,13 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     ```JavaScript
     angular.module('app');
         .controller('appController', function($scope, wikipediaFactory){
+        
             wikipediaFactory.getArticle({
                 term: 'Oktoberfest'
             }).then(function (_data) {
                 //on success
             });
+            
         });
     ```
 
