@@ -11,8 +11,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     1. `bower install --save angular-wikipedia-api-factory`
     2. `npm install --save angular-wikipedia-api-factory`
     3. download [angular-wikipedia-api-factory.zip](https://github.com/JohnnyTheTank/angular-wikipedia-api-factory/zipball/master)
-2. Add `jtt_wikipedia` to your application's module dependencies.
-3. Include dependencies in your HTML.
+2. Include dependencies in your HTML.
     1. When using bower:
     ```html
     <script src="bower_components/angular-wikipedia-api-factory/dist/angular-wikipedia-api-factory.min.js"></script>
@@ -25,8 +24,21 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
     ```html
     <script src="angular-wikipedia-api-factory.min.js"></script>
     ```
-4. Use the factory `wikipediaFactory`
-
+3. Add **`jtt_wikipedia`** to your application's module dependencies:    
+    ```JavaScript
+    angular.module('app', ['wikipedia']);
+    ```
+4. Use the factory `wikipediaFactory`:
+    ```JavaScript
+    angular.module('app');
+        .controller('appController', function($scope, wikipediaFactory){
+            wikipediaFactory.getArticle({
+                term: 'Oktoberfest'
+            }).then(function (_data) {
+                //on success
+            });
+        });
+    ```
 
 ### factory methods
 
