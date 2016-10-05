@@ -27,7 +27,7 @@ Author: Jonathan Hornung ([JohnnyTheTank](https://github.com/JohnnyTheTank))
 3. Add **`jtt_wikipedia`** to your application's module dependencies
   
     ```JavaScript
-    angular.module('app', ['wikipedia']);
+    angular.module('app', ['jtt_wikipedia']);
     ```
 4. Use the factory `wikipediaFactory`:
 
