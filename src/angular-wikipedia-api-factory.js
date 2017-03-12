@@ -116,7 +116,7 @@ angular.module("jtt_wikipedia", [])
                     wikipediaSearchData.object.titles = _params.term;
 
                     wikipediaSearchData = this.fillDataInObjectByList(wikipediaSearchData, _params, [
-                        'prop', 'rvparse', 'formatversion', 'prop', 'pithumbsize'
+                        'prop', 'rvparse', 'formatversion', 'prop', 'pithumbsize', 'redirects'
                     ]);
                     wikipediaSearchData.url = this.getApiBaseUrl(_params.lang);
                     break;
